@@ -1,0 +1,9 @@
+13-1-2022
+Made repo
+Brainstormed ideas
+    -Dungeon Crawler
+    -Tetris
+    -Battleships
+    -Pac-man
+    -Space Invaders
+    -2048
