@@ -4,7 +4,7 @@ David Chen
 Jaylen Zeng
 pd 7
 ---------------------
-<Project Summary / Working Title>
+Java Dinosaur Game
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
