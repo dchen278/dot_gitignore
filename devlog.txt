@@ -51,13 +51,14 @@ yyyy-mm-dd
 <Member> :: <Thing member did.>
 <Member> :: <Thing member did.>
 ==============================================================
-13-1-2022
-Made repo
-Brainstormed ideas
+2022-01-13
+David: Made repo
+ALL: Brainstormed ideas
     -Dungeon Crawler
     -Tetris
     -Battleships
     -Pac-man
     -Space Invaders
     -2048
-14-1-2022
+2022-01-14
+Jaylen: UML diagrams
