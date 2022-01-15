@@ -40,21 +40,33 @@ public class Game {
                 moveDown();
             }
             combineDown();
+            for (int i = 0; i < grid.length; i++) {
+                moveDown();
+            }
         } else if (move.equals("up")) {
             for (int i = 0; i < grid.length; i++) {
                 moveUp();
             }
             combineUp();
+            for (int i = 0; i < grid.length; i++) {
+                moveUp();
+            }
         } else if (move.equals("left")) {
             for (int i = 0; i < grid.length; i++) {
                 moveLeft();
             }
             combineLeft();
+            for (int i = 0; i < grid.length; i++) {
+                moveLeft();
+            }
         } else if (move.equals("right")) {
             for (int i = 0; i < grid.length; i++) {
                 moveRight();
             }
             combineRight();
+            for (int i = 0; i < grid.length; i++) {
+                moveRight();
+            }
         } else {
             System.out.println("Game has been terminated...");
             System.exit(0);
