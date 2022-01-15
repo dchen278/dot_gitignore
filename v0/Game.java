@@ -82,15 +82,15 @@ public class Game {
 
     // move everything up
     private void moveUp() {
-        for (int i = 0; i < grid.length - 1; i++) {
+        for (int i = grid.length - 1; i > 0; i --) {
             for (int j = 0; j < grid[i].length; j++) {
-                if (grid[i][j] == 0) {
-                    grid[i][j] = grid[i + 1][j];
-                    grid[i + 1][j] = 0;
-                } else if (grid[i][j] == grid[i + 1][j]) {
-                    grid[i][j] *= 2;
-                    grid[i + 1][j] = 0;
-                    score += grid[i][j];
+                if (grid[i - 1][j] == 0) {
+                    grid[i - 1][j] = grid[i][j];
+                    grid[i][j] = 0;
+                } else if (grid[i][j] == grid[i - 1][j]) {
+                    grid[i - 1][j] *= 2;
+                    grid[i][j] = 0;
+                    score += grid[i - 1][j];
                 }
             }
         }
@@ -115,14 +115,14 @@ public class Game {
     // move everything right
     private void moveRight() {
         for (int i = 0; i < grid.length; i++) {
-            for (int j = grid[i].length - 1; j > 0; j --) {
-                if (grid[i][j] == 0) {
-                    grid[i][j] = grid[i][j - 1];
+            for (int j = 0; j < grid[i].length - 1; j ++) {
+                if (grid[i][j + 1] == 0) {
+                    grid[i][j + 1] = grid[i][j];
                     grid[i][j] = 0;
-                } else if (grid[i][j] == grid[i][j - 1]) {
-                    grid[i][j] *= 2;
-                    grid[i][j - 1] = 0;
-                    score += grid[i][j];
+                } else if (grid[i][j + 1] == grid[i][j]) {
+                    grid[i][j + 1] *= 2;
+                    grid[i][j] = 0;
+                    score += grid[i][j + 1];
                 }
             }
         }
@@ -139,8 +139,16 @@ public class Game {
 
     private boolean isLoss() {
         for (int[] a : grid) {
-            for (int i : a) {
-                if (i == 0) {
+            for (int i = 0; i < a.length - 1; i ++) {
+                if (a[i] == a[i + 1] || a[i] == 0){
+                    return false;
+                }
+            }
+        }
+
+        for (int i = 0; i < grid.length - 1; i ++) {
+            for (int j = 0; j < grid.length; j ++) {
+                if (grid[i][j] == grid[i + 1][j]) {
                     return false;
                 }
             }
@@ -157,8 +165,4 @@ public class Game {
         }
     }
 
-    public static void main(String[] args) {
-        Game bob = new Game();
-        bob.run();
-    }
 }
