@@ -81,15 +81,14 @@ public class Game {
             int x = (int) (Math.random() * 4);
             int y = (int) (Math.random() * 4);
             // spawn 2 or 4
-
             if (grid[y][x] == 0) {
-                grid[y][x] = (int) (Math.random() * 2) + 2;
-                break;
+                if (Math.random() < 0.75) {
+                    grid[y][x] = 2;
+                } else {
+                    grid[y][x] = 4;
+                }
             }
-            if (grid[y][x] == 0) {
-                grid[y][x] = 2;
-                break;
-            }
+            break;
         }
     }
 
