@@ -25,9 +25,7 @@ public class Game {
         System.out.println("Score: " + score);
         printArr(grid);
         System.out.println("Make a move(Type \"exit\" to terminate game): ");
-        move = sc.nextLine();
-        move = move.trim();
-        move = move.toLowerCase();
+        move = sc.nextLine().trim().toLowerCase();
 
         while (!isCommand(move)) {
             System.out.println("Make a valid move (Type \"exit\" to terminate game): ");
@@ -70,6 +68,12 @@ public class Game {
         while (true) {
             int x = (int) (Math.random() * 4);
             int y = (int) (Math.random() * 4);
+            // spawn 2 or 4
+
+            if (grid[y][x] == 0) {
+                grid[y][x] = (int) (Math.random() * 2) + 2;
+                break;
+            }
             if (grid[y][x] == 0) {
                 grid[y][x] = 2;
                 break;
@@ -78,7 +82,7 @@ public class Game {
     }
 
     public void run() {
-        clearScreen();
+        // clearScreen();
         while (!isLoss()) {
             playTurn();
             clearScreen();
