@@ -64,4 +64,5 @@ Jaylen: UML diagrams
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 All: Decided on final idea
 Yat Long: Create basic functional game
+David: Added ASCII Art and Credits
 ==============================================================
