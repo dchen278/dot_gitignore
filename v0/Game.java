@@ -26,10 +26,14 @@ public class Game {
         printArr(grid);
         System.out.println("Make a move(Type \"exit\" to terminate game): ");
         move = sc.nextLine();
+        move = move.trim();
+        move = move.toLowerCase();
 
         while (!isCommand(move)) {
             System.out.println("Make a valid move (Type \"exit\" to terminate game): ");
             move = sc.nextLine();
+            move = move.trim();
+            move = move.toLowerCase();
         }
 
         // move multiple length times to ensure all possible moves are made
@@ -182,9 +186,7 @@ public class Game {
     }
 
     private boolean isCommand(String s) {
-        String temp = s.trim();
-        temp = s.toLowerCase();
-        if (temp.equals("exit") || temp.equals("up") || temp.equals("down") || temp.equals("left") || temp.equals("right")) {
+        if (s.equals("exit") || s.equals("up") || s.equals("down") || s.equals("left") || s.equals("right")) {
             return true;
         }
         return false;
