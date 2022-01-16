@@ -170,6 +170,7 @@ public class Game {
                 if (grid[i][j + 1] == grid[i][j]) {
                     grid[i][j] *= 2;
                     grid[i][j + 1] = 0;
+                    score += grid[i][j];
                 }
             }
         }
