@@ -25,9 +25,7 @@ public class Game {
         System.out.println("Score: " + score);
         printArr(grid);
         System.out.println("Make a move(Type \"exit\" to terminate game): ");
-        move = sc.nextLine();
-        move = move.trim();
-        move = move.toLowerCase();
+        move = sc.nextLine().trim().toLowerCase();
 
         while (!isCommand(move)) {
             System.out.println("Make a valid move (Type \"exit\" to terminate game): ");
@@ -42,21 +40,33 @@ public class Game {
                 moveDown();
             }
             combineDown();
+            for (int i = 0; i < grid.length; i++) {
+                moveDown();
+            }
         } else if (move.equals("up")) {
             for (int i = 0; i < grid.length; i++) {
                 moveUp();
             }
             combineUp();
+            for (int i = 0; i < grid.length; i++) {
+                moveUp();
+            }
         } else if (move.equals("left")) {
             for (int i = 0; i < grid.length; i++) {
                 moveLeft();
             }
             combineLeft();
+            for (int i = 0; i < grid.length; i++) {
+                moveLeft();
+            }
         } else if (move.equals("right")) {
             for (int i = 0; i < grid.length; i++) {
                 moveRight();
             }
             combineRight();
+            for (int i = 0; i < grid.length; i++) {
+                moveRight();
+            }
         } else {
             System.out.println("Game has been terminated...");
             System.exit(0);
@@ -70,15 +80,20 @@ public class Game {
         while (true) {
             int x = (int) (Math.random() * 4);
             int y = (int) (Math.random() * 4);
+            // spawn 2 or 4
             if (grid[y][x] == 0) {
-                grid[y][x] = 2;
+                if (Math.random() < 0.75) {
+                    grid[y][x] = 2;
+                } else {
+                    grid[y][x] = 4;
+                }
                 break;
             }
         }
     }
 
     public void run() {
-        clearScreen();
+        // clearScreen();
         while (!isLoss()) {
             playTurn();
             clearScreen();

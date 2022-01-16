@@ -87,8 +87,8 @@ public class Game {
                 } else {
                     grid[y][x] = 4;
                 }
+                break;
             }
-            break;
         }
     }
 
