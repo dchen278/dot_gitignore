@@ -94,7 +94,7 @@ public class Game {
             playTurn();
             clearScreen();
         }
-        System.out.println("GG! Your final score was: " + score);
+        System.out.println("Good game! Your final score was: " + score);
     }
 
     // ============Movement methods============
