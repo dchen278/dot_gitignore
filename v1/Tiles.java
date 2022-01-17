@@ -3,8 +3,12 @@ public class Tiles {
 
     public static String tileColor(int value) {
         int log = (int) (Math.log(value) / Math.log(2));
-        int color = log + 40;
-        return "\u001B[" + color + "m";
+        int color = log;
+        // skip colors that are hard to read
+        if (color == 8 || color == 104) {
+            color += 1;
+        }
+        return "\u001B[48;5;" + color + "m";
     }
 
     public static void printTile(int value) {
