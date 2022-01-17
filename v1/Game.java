@@ -95,6 +95,7 @@ public class Game {
             clearScreen();
         }
         System.out.println("Good game! Your final score was: " + score);
+        System.exit(0);
     }
 
     // ============Movement methods============
@@ -242,7 +243,7 @@ public class Game {
                 Tiles.printTile(a[i][j]);
             }
             System.out.println();
-            Tiles.printBorder(a.length);
+            Tiles.printBorder(a.length, a[i]);
             System.out.println();
         }
         System.out.println();

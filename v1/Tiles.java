@@ -12,7 +12,22 @@ public class Tiles {
     }
 
     public static void printTile(int value) {
-        System.out.print(tileColor(value) + "\u001B[90m" + "  " + value + "  " + RESET + "|");
+        System.out.print(tileColor(value) + "\u001B[90m" + "  " + ((value == 0) ? " " : value) + "  " + RESET + "|");
+    }
+
+    public static void printBorder(int a, int[] b) {
+        // Prints the border of the game board dashes colored
+        // add the number of digits in b to the length of the border
+        int digits = 0;
+        for (int num : b) {
+            if (num != 0 && num > 10) {
+                digits += Integer.toString(num).length();
+            }
+        }
+
+        for (int i = 0; i < a * 6 + digits; i++) {
+            System.out.print("\u001B[95m" + "-" + RESET);
+        }
     }
 
     public static void printBorder(int a) {
