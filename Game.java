@@ -26,7 +26,7 @@ public class Game {
         printArr(grid);
         System.out.println("Make a move(Type \"w a s d\" to move tiles, \"exit\" to terminate game): ");
         move = sc.nextLine().trim().toLowerCase();
-        
+
         while (!isCommand(move)) {
             System.out.println("Make a valid move(Type \"w a s d\" to move tiles, \"exit\" to terminate game): ");
             move = sc.nextLine();
@@ -72,7 +72,6 @@ public class Game {
             System.exit(0);
         }
 
-
         // spawn new block at random location
         while (!isLoss()) {
             int x = (int) (Math.random() * 4);
@@ -99,7 +98,7 @@ public class Game {
     }
 
     // ============Movement methods============
-    
+
     // move everything down
     private void moveDown() {
         for (int i = grid.length - 1; i > 0; i--) {
@@ -199,7 +198,7 @@ public class Game {
             }
         }
     }
-// ============End Movement methods============
+    // ============End Movement methods============
 
     private boolean isCommand(String s) {
         // check if input is valid command
@@ -210,18 +209,24 @@ public class Game {
     }
 
     private boolean isLoss() {
-        for (int[] a : grid) {
-            for (int i = 0; i < a.length - 1; i++) {
-                if (a[i] == a[i + 1] || a[i] == 0) {
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid.length; j++) {
+                // check empty tiles
+                if (grid[i][j] == 0) {
                     return false;
                 }
-            }
-        }
+                // check for possible merges up and down
+                if (i > 0) {
+                    if (grid[i][j] == grid[i - 1][j]) {
+                        return false;
+                    }
+                }
 
-        for (int i = 0; i < grid.length - 1; i++) {
-            for (int j = 0; j < grid.length; j++) {
-                if (grid[i][j] == grid[i + 1][j]) {
-                    return false;
+                // check for possible merges left and right
+                if (j > 0) {
+                    if (grid[i][j] == grid[i][j - 1]) {
+                        return false;
+                    }
                 }
             }
         }
@@ -229,17 +234,23 @@ public class Game {
     }
 
     public static void printArr(int[][] a) {
-        for (int[] row : a) {
-            for (int i : row) {
-                System.out.print(i + " ");
+        Tiles.printBorder(a.length);
+        System.out.println();
+
+        for (int i = 0; i < a.length; i++) {
+            for (int j = 0; j < a.length; j++) {
+                Tiles.printTile(a[i][j]);
             }
             System.out.println();
+            Tiles.printBorder(a.length);
+            System.out.println();
         }
+        System.out.println();
     }
 
-    public static void clearScreen() {  
-        System.out.print("\033[H\033[2J");  
-        System.out.flush();  
-    }  
+    public static void clearScreen() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+    }
 
 }
