@@ -14,6 +14,7 @@ Java Dinosaur Game
 OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - Originally, the game wouldn't slide all tiles to it's proper place. This was fixed by running the move methods multiple times.
+- Game would not exit after the player lost. It turned out that we simply didn't exit after the game was done. 
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -25,7 +26,7 @@ wow! oo!...
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-we changed our program from the Dinosaur Game to 2048 bc event handling can't be done on terminal
+we changed our program from the Dinosaur Game to 2048 b/c event handling can't be done on terminal
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -68,3 +69,4 @@ David: Added ASCII Art and Credits
 2022-01-17
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 David: Added colored tiles and borders
+David: Redesigned team flag
