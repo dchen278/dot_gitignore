@@ -1,9 +1,13 @@
 import java.util.*;
 
 public class Classic implements Game {
-    private int[][] grid;
-    private int score;
-    private Scanner sc;
+     int[][] grid;
+     int score;
+     Scanner sc;
+
+    public static String about() {
+        return "Classic 2048";
+    }
 
     public Classic() {
         score = 0;
@@ -13,14 +17,18 @@ public class Classic implements Game {
             int x = (int) (Math.random() * 4);
             int y = (int) (Math.random() * 4);
             if (grid[y][x] == 0) {
-                grid[y][x] = 2;
+                if (Math.random() < 0.75) {
+                    grid[y][x] = 2;
+                } else {
+                    grid[y][x] = 4;
+                }
                 break;
             }
         }
         sc = new Scanner(System.in);
     }
 
-    private void playTurn() {
+    protected void playTurn() {
         String move;
         System.out.println("Score: " + score);
         printArr(grid);
@@ -74,8 +82,8 @@ public class Classic implements Game {
 
         // spawn new block at random location
         while (!isFull()) {
-            int x = (int) (Math.random() * 4);
-            int y = (int) (Math.random() * 4);
+            int x = (int) (Math.random() * grid.length);
+            int y = (int) (Math.random() * grid.length);
             // spawn 2 or 4
             if (grid[y][x] == 0) {
                 if (Math.random() < 0.75) {
@@ -102,7 +110,7 @@ public class Classic implements Game {
     // ============Movement methods============
 
     // move everything down
-    private void moveDown() {
+    protected void moveDown() {
         for (int i = grid.length - 1; i > 0; i--) {
             for (int j = 0; j < grid.length; j++) {
                 if (grid[i][j] == 0) {
@@ -113,7 +121,7 @@ public class Classic implements Game {
         }
     }
 
-    private void combineDown() {
+    protected void combineDown() {
         for (int i = grid.length - 1; i > 0; i--) {
             for (int j = 0; j < grid.length; j++) {
                 if (grid[i][j] == grid[i - 1][j]) {
@@ -126,7 +134,7 @@ public class Classic implements Game {
     }
 
     // move everything up
-    private void moveUp() {
+    protected void moveUp() {
         for (int i = 0; i < grid.length - 1; i++) {
             for (int j = 0; j < grid.length; j++) {
                 if (grid[i][j] == 0) {
@@ -137,7 +145,7 @@ public class Classic implements Game {
         }
     }
 
-    private void combineUp() {
+    protected void combineUp() {
         // combine everything up
         for (int i = 0; i < grid.length - 1; i++) {
             for (int j = 0; j < grid.length; j++) {
@@ -152,7 +160,7 @@ public class Classic implements Game {
     }
 
     // move everything left
-    private void moveLeft() {
+    protected void moveLeft() {
         for (int i = 0; i < grid.length; i++) {
             for (int j = 1; j < grid.length; j++) {
                 if (grid[i][j - 1] == 0) {
@@ -163,7 +171,7 @@ public class Classic implements Game {
         }
     }
 
-    private void combineLeft() {
+    protected void combineLeft() {
         // combine tiles left
         for (int i = 0; i < grid.length; i++) {
             for (int j = 0; j < grid.length - 1; j++) {
@@ -177,7 +185,7 @@ public class Classic implements Game {
     }
 
     // move everything right
-    private void moveRight() {
+    protected void moveRight() {
         for (int i = 0; i < grid.length; i++) {
             for (int j = grid.length - 1; j > 0; j--) {
                 if (grid[i][j] == 0) {
@@ -188,7 +196,7 @@ public class Classic implements Game {
         }
     }
 
-    private void combineRight() {
+    protected void combineRight() {
         // combine everything right
         for (int i = 0; i < grid.length; i++) {
             for (int j = grid.length - 1; j > 0; j--) {
@@ -202,7 +210,7 @@ public class Classic implements Game {
     }
     // ============End Movement methods============
 
-    private boolean isCommand(String s) {
+    protected boolean isCommand(String s) {
         // check if input is valid command
         if (s.equals("exit") || s.equals("w") || s.equals("s") || s.equals("a") || s.equals("d")) {
             return true;
@@ -210,7 +218,7 @@ public class Classic implements Game {
         return false;
     }
 
-    private boolean isLoss() {
+    protected boolean isLoss() {
         for (int i = 0; i < grid.length; i++) {
             for (int j = 0; j < grid.length; j++) {
                 // check empty tiles
@@ -235,7 +243,7 @@ public class Classic implements Game {
         return true;
     }
 
-    private boolean isFull() {
+    protected boolean isFull() {
         for (int[] a : grid) {
             for (int i : a) {
                 if (i == 0) {
@@ -246,7 +254,7 @@ public class Classic implements Game {
         return true;
     }
 
-    public static void printArr(int[][] a) {
+    protected static void printArr(int[][] a) {
         Tiles.printBorder(a.length);
         System.out.println();
 
@@ -261,7 +269,7 @@ public class Classic implements Game {
         System.out.println();
     }
 
-    public static void clearScreen() {
+    protected static void clearScreen() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
     }

@@ -19,11 +19,12 @@ public class Woo {
         checkAndMakeJson();
         Scanner input = new Scanner(System.in);
         System.out.println("Please enter the game mode you want to play: ");
-        System.out.println("1. Classic 2048");
-        System.out.println("2. Custom 2048");
-        System.out.println("3. PVP 2048");
+        System.out.println("1. " + Classic.about());
+        System.out.println("2. " + CustomBoard.about());
+        System.out.println("3. " + Anti.about());
         System.out.println("4. Play vs Computer");
-        System.out.println("5. Exit");
+        System.out.println("5. PVP");
+        System.out.println("6. Exit");
         int gameMode = input.nextInt();
 
         if (gameMode == 1) {
@@ -31,18 +32,24 @@ public class Woo {
         } else if (gameMode == 2) {
             System.out.println("Enter your board size (between 3 and 10): ");
             int boardSize = input.nextInt();
-
             while (boardSize < 3 || boardSize > 10) {
                 System.out.println("Enter a valid board size");
                 boardSize = input.nextInt();
             }
 
             poggers = new CustomBoard(boardSize);
+        } else if (gameMode == 3) {
+            poggers = new Anti();
         } else if (gameMode == 4) {
-            poggers = new Computer();
+            poggers = new Classic();
+        } else if (gameMode == 5) {
+            poggers = new Classic();
+        } else {
+            System.exit(0);
         }
 
         poggers.run();
+
     }
 
     public static void checkAndMakeJson() {
