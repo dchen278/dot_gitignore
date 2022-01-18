@@ -12,6 +12,7 @@ public class Tiles {
     }
 
     public static void printTile(int value) {
+        
         System.out.print(tileColor(value) + "\u001B[90m" + "  " + ((value == 0) ? " " : value) + "  " + RESET + "|");
     }
 
