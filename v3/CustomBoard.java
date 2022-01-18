@@ -26,14 +26,4 @@ public class CustomBoard extends Classic {
         }
     }
 
-    public void run() {
-        // play until loss
-        while (!isLoss()) {
-            playTurn();
-            clearScreen();
-        }
-        printArr(grid);
-        System.out.println("Good game! Your final score was: " + score);
-        System.exit(0);
-    }
 }
