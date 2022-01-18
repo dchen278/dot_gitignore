@@ -38,6 +38,8 @@ public class Woo {
             }
 
             poggers = new CustomBoard(boardSize);
+        } else if (gameMode == 4) {
+            poggers = new Computer();
         }
 
         poggers.run();

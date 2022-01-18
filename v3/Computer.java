@@ -80,7 +80,6 @@ public class Computer implements Game {
         // play until loss
         while (!isLoss()) {
             playTurn();
-            clearScreen();
         }
         printArr(grid);
         System.out.println("Good game! The computer score was: " + score);
