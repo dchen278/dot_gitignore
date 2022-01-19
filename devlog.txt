@@ -68,6 +68,7 @@ David: Added ASCII Art and Credits
 2022-01-17
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 David: Added colored tiles and borders
+    - Custom Tiles class for colored output
 David: Redesigned team flag
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 2022-01-18
@@ -75,5 +76,6 @@ ALL: Implemented v3:
     -add more gamemodes (Customboard, Player vs Computer)
 Yat Long: create Anti gamemode
 Jaylen: create Restrict gamemode.
+David: Add leaderboard
 
 ==============================================================
