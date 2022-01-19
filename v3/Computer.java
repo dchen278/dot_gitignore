@@ -1,11 +1,10 @@
 import java.util.*;
 
-public class Game {
+public class Computer implements Game {
     private int[][] grid;
     private int score;
-    private Scanner sc;
 
-    public Game() {
+    public Computer() {
         score = 0;
         grid = new int[4][4];
         grid[(int) (Math.random() * 4)][(int) (Math.random() * 4)] = 2;
@@ -17,25 +16,17 @@ public class Game {
                 break;
             }
         }
-        sc = new Scanner(System.in);
     }
 
     private void playTurn() {
         String move;
         System.out.println("Score: " + score);
         printArr(grid);
-        System.out.println("Make a move(Type \"w a s d\" to move tiles, \"exit\" to terminate game): ");
-        move = sc.nextLine().trim().toLowerCase();
 
-        while (!isCommand(move)) {
-            System.out.println("Make a valid move(Type \"w a s d\" to move tiles, \"exit\" to terminate game): ");
-            move = sc.nextLine();
-            move = move.trim();
-            move = move.toLowerCase();
-        }
+        int random = (int)(Math.random() * 4);
 
         // move multiple length times to ensure all possible moves are made
-        if (move.equals("s")) {
+        if (random == 0) {
             for (int i = 0; i < grid.length; i++) {
                 moveDown();
             }
@@ -43,7 +34,7 @@ public class Game {
             for (int i = 0; i < grid.length; i++) {
                 moveDown();
             }
-        } else if (move.equals("w")) {
+        } else if (random == 1) {
             for (int i = 0; i < grid.length; i++) {
                 moveUp();
             }
@@ -51,7 +42,7 @@ public class Game {
             for (int i = 0; i < grid.length; i++) {
                 moveUp();
             }
-        } else if (move.equals("a")) {
+        } else if (random == 2) {
             for (int i = 0; i < grid.length; i++) {
                 moveLeft();
             }
@@ -59,7 +50,7 @@ public class Game {
             for (int i = 0; i < grid.length; i++) {
                 moveLeft();
             }
-        } else if (move.equals("d")) {
+        } else if (random == 3) {
             for (int i = 0; i < grid.length; i++) {
                 moveRight();
             }
@@ -67,13 +58,10 @@ public class Game {
             for (int i = 0; i < grid.length; i++) {
                 moveRight();
             }
-        } else {
-            System.out.println("Game has been terminated...");
-            System.exit(0);
-        }
+        } 
 
         // spawn new block at random location
-        while (!isLoss()) {
+        while (!isFull()) {
             int x = (int) (Math.random() * 4);
             int y = (int) (Math.random() * 4);
             // spawn 2 or 4
@@ -92,9 +80,10 @@ public class Game {
         // play until loss
         while (!isLoss()) {
             playTurn();
-            clearScreen();
         }
-        System.out.println("GG! Your final score was: " + score);
+        printArr(grid);
+        System.out.println("Good game! The computer score was: " + score);
+        System.exit(0);
     }
 
     // ============Movement methods============
@@ -198,15 +187,6 @@ public class Game {
             }
         }
     }
-    // ============End Movement methods============
-
-    private boolean isCommand(String s) {
-        // check if input is valid command
-        if (s.equals("exit") || s.equals("w") || s.equals("s") || s.equals("a") || s.equals("d")) {
-            return true;
-        }
-        return false;
-    }
 
     private boolean isLoss() {
         for (int i = 0; i < grid.length; i++) {
@@ -233,6 +213,17 @@ public class Game {
         return true;
     }
 
+    private boolean isFull() {
+        for (int[] a : grid) {
+            for (int i : a) {
+                if (i == 0) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
     public static void printArr(int[][] a) {
         Tiles.printBorder(a.length);
         System.out.println();
@@ -242,15 +233,10 @@ public class Game {
                 Tiles.printTile(a[i][j]);
             }
             System.out.println();
-            Tiles.printBorder(a.length);
+            Tiles.printBorder(a.length, a[i]);
             System.out.println();
         }
         System.out.println();
-    }
-
-    public static void clearScreen() {
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
     }
 
 }

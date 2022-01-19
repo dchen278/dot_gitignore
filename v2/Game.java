@@ -24,11 +24,11 @@ public class Game {
         String move;
         System.out.println("Score: " + score);
         printArr(grid);
-        System.out.println("Make a move(Type \"w a s d\" to move tiles, \"exit\" to terminate game): ");
+        System.out.print("Type \"w a s d\" to move tiles, \"exit\" to terminate game: ");
         move = sc.nextLine().trim().toLowerCase();
 
         while (!isCommand(move)) {
-            System.out.println("Make a valid move(Type \"w a s d\" to move tiles, \"exit\" to terminate game): ");
+            System.out.print("Type \"w a s d\" to move tiles, \"exit\" to terminate game: ");
             move = sc.nextLine();
             move = move.trim();
             move = move.toLowerCase();
@@ -73,7 +73,7 @@ public class Game {
         }
 
         // spawn new block at random location
-        while (!isLoss()) {
+        while (!isFull()) {
             int x = (int) (Math.random() * 4);
             int y = (int) (Math.random() * 4);
             // spawn 2 or 4
@@ -94,7 +94,9 @@ public class Game {
             playTurn();
             clearScreen();
         }
-        System.out.println("GG! Your final score was: " + score);
+        printArr(grid);
+        System.out.println("Good game! Your final score was: " + score);
+        System.exit(0);
     }
 
     // ============Movement methods============
@@ -233,6 +235,17 @@ public class Game {
         return true;
     }
 
+    private boolean isFull() {
+        for (int[] a : grid) {
+            for (int i : a) {
+                if (i == 0) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
     public static void printArr(int[][] a) {
         Tiles.printBorder(a.length);
         System.out.println();
@@ -242,7 +255,7 @@ public class Game {
                 Tiles.printTile(a[i][j]);
             }
             System.out.println();
-            Tiles.printBorder(a.length);
+            Tiles.printBorder(a.length, a[i]);
             System.out.println();
         }
         System.out.println();
