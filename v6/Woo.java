@@ -26,7 +26,7 @@ public class Woo {
         System.out.println("2. " + CustomBoard.about());
         System.out.println("3. " + Anti.about());
         System.out.println("4. " + Restrict.about());
-        System.out.println("5. Play vs Computer");
+        System.out.println("5. " + VSComputer.about());
         System.out.println("6. PVP");
         System.out.println("7. Exit");
         int gameMode = input.nextInt();

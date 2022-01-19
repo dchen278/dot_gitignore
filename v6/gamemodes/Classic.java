@@ -1,6 +1,6 @@
 package gamemodes;
 
-import java.util.*;
+import java.util.Scanner;
 import util.Tiles;
 
 public class Classic implements Game {
@@ -274,7 +274,6 @@ public class Classic implements Game {
 
     protected static void clearScreen() {
         System.out.print("\033[H\033[2J");
-        System.out.flush();
     }
 
 }

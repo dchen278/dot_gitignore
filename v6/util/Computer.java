@@ -25,7 +25,7 @@ public class Computer {
         System.out.println("Computer Score: " + score);
         printArr(grid);
 
-        int random = (int)(Math.random() * 4);
+        int random = (int) (Math.random() * 4);
 
         // move multiple length times to ensure all possible moves are made
         if (random == 0) {
@@ -60,7 +60,7 @@ public class Computer {
             for (int i = 0; i < grid.length; i++) {
                 moveRight();
             }
-        } 
+        }
 
         // spawn new block at random location
         while (!isFull()) {
@@ -76,16 +76,6 @@ public class Computer {
                 break;
             }
         }
-    }
-
-    public void run() {
-        // play until loss
-        while (!isLoss()) {
-            playTurn();
-        }
-        printArr(grid);
-        System.out.println("Good game! The computer score was: " + score);
-        System.exit(0);
     }
 
     // ============Movement methods============
@@ -224,6 +214,10 @@ public class Computer {
             }
         }
         return true;
+    }
+
+    public int getScore() {
+        return score;
     }
 
     public static void printArr(int[][] a) {
