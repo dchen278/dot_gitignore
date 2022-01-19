@@ -1,7 +1,9 @@
 
+package util;
+
 import java.util.*;
 
-public class Computer implements Game {
+public class Computer {
     private int[][] grid;
     private int score;
 
@@ -19,8 +21,8 @@ public class Computer implements Game {
         }
     }
 
-    private void playTurn() {
-        System.out.println("Score: " + score);
+    public void playTurn() {
+        System.out.println("Computer Score: " + score);
         printArr(grid);
 
         int random = (int)(Math.random() * 4);
@@ -188,7 +190,7 @@ public class Computer implements Game {
         }
     }
 
-    private boolean isLoss() {
+    public boolean isLoss() {
         for (int i = 0; i < grid.length; i++) {
             for (int j = 0; j < grid.length; j++) {
                 // check empty tiles

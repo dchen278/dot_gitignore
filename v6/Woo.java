@@ -63,10 +63,8 @@ public class Woo {
                 key2.trim().toLowerCase();
             }
             poggers = new Restrict(key1, key2);
-        } else if (gameMode == 5)
-
-        {
-            poggers = new Classic();
+        } else if (gameMode == 5) {
+            poggers = new VSComputer();
         } else if (gameMode == 6) {
             poggers = new Classic();
         } else {
