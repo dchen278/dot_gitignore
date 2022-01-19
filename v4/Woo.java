@@ -48,7 +48,6 @@ public class Woo {
             String key1 = input.nextLine();
             key1.trim().toLowerCase();
             while (directions.indexOf(key1) < 0) {
-                System.out.println(key1.equals("w"));
                 System.out.println("Enter a valid direction");
                 key1 = input.nextLine();
                 key1.trim().toLowerCase();
