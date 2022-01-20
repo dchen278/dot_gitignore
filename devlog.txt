@@ -66,6 +66,7 @@ Jaylen: UML diagrams
 All: Decided on final idea 
 Yat Long: Create basic functional game
 David: Added ASCII Art and Credits
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 2022-01-17
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 David: Added colored tiles and borders
@@ -73,10 +74,19 @@ David: Added colored tiles and borders
 David: Redesigned team flag
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 2022-01-18
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ALL: Implemented v3:
     -add more gamemodes (Customboard, Player vs Computer)
 Yat Long: create Anti gamemode
 Jaylen: create Restrict gamemode.
 David: Add leader board and vs computer
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2022-1-19
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ALL: restructure files
+Jaylen: create flowchart
+Yat Long: update readme
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 ==============================================================
