@@ -4,7 +4,7 @@ package util;
 import java.util.*;
 
 public class Computer {
-    public int[][] grid;
+    private int[][] grid;
     private int score;
 
     public Computer() {
@@ -28,7 +28,7 @@ public class Computer {
         double random = Math.random();
 
         // move multiple length times to ensure all possible moves are made
-        if (random > 0 && random < 0.05) {
+        if (random > 0 && random < 0.1) {
             for (int i = 0; i < grid.length; i++) {
                 moveDown();
             }

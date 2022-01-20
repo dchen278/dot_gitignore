@@ -14,16 +14,13 @@ public class VSComputer extends Classic {
             System.out.println("====================================");
             this.playTurn();
         }
-        clearScreen();
-        bot.printArr(bot.grid);
-        System.out.println("====================================");
-        this.printArr(this.grid);
-        if (bot.isLoss()) {
+        if (this.score > bot.getScore()) {
             System.out.println("GG! You won against the computer!");
-
-        } else {
+        } else if (this.score < bot.getScore()) {
             System.out.println("Not POG! You lost!");
-        } 
+        } else {
+            System.out.println("You tied with the computer.");
+        }
     }
 
     protected void playTurn() {
