@@ -2,7 +2,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 import gamemodes.*;
-import gamemodes.Game;
 
 public class Woo {
     static Game poggers;
@@ -30,6 +29,9 @@ public class Woo {
         System.out.println("6. PVP");
         System.out.println("7. Exit");
         int gameMode = input.nextInt();
+        while (gameMode > 7 || gameMode < 1) {
+            gameMode = input.nextInt();
+        }
 
         if (gameMode == 1) {
             poggers = new Classic();
