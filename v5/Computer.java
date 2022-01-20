@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 public class Computer implements Game {
@@ -18,8 +19,7 @@ public class Computer implements Game {
         }
     }
 
-    void playTurn() {
-        String move;
+    private void playTurn() {
         System.out.println("Score: " + score);
         printArr(grid);
 
@@ -188,7 +188,7 @@ public class Computer implements Game {
         }
     }
 
-    boolean isLoss() {
+    private boolean isLoss() {
         for (int i = 0; i < grid.length; i++) {
             for (int j = 0; j < grid.length; j++) {
                 // check empty tiles

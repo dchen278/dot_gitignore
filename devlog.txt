@@ -15,6 +15,7 @@ OBSTACLES OVERCOME
 - Originally, the game wouldn't slide all tiles to it's proper place. This was fixed by running the move methods multiple times.
 - Game would not exit after the player lost. It turned out that we simply didn't exit after the game was done. 
 - Fix freezing bug. Caused by trying to spawn tiles when board is full. 
+- After we restructured, importing gamemodes.* did not work for interface Game. We had to import Game from gamemodes explicitly for it to work
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -68,6 +69,7 @@ David: Added ASCII Art and Credits
 2022-01-17
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 David: Added colored tiles and borders
+    - Custom Tiles class for colored output
 David: Redesigned team flag
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 2022-01-18
@@ -75,5 +77,6 @@ ALL: Implemented v3:
     -add more gamemodes (Customboard, Player vs Computer)
 Yat Long: create Anti gamemode
 Jaylen: create Restrict gamemode.
+David: Add leader board and vs computer
 
 ==============================================================

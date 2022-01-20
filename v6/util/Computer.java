@@ -1,6 +1,9 @@
+
+package util;
+
 import java.util.*;
 
-public class Computer implements Game {
+public class Computer {
     private int[][] grid;
     private int score;
 
@@ -18,12 +21,11 @@ public class Computer implements Game {
         }
     }
 
-    void playTurn() {
-        String move;
-        System.out.println("Score: " + score);
+    public void playTurn() {
+        System.out.println("Computer Score: " + score);
         printArr(grid);
 
-        int random = (int)(Math.random() * 4);
+        int random = (int) (Math.random() * 4);
 
         // move multiple length times to ensure all possible moves are made
         if (random == 0) {
@@ -58,7 +60,7 @@ public class Computer implements Game {
             for (int i = 0; i < grid.length; i++) {
                 moveRight();
             }
-        } 
+        }
 
         // spawn new block at random location
         while (!isFull()) {
@@ -74,16 +76,6 @@ public class Computer implements Game {
                 break;
             }
         }
-    }
-
-    public void run() {
-        // play until loss
-        while (!isLoss()) {
-            playTurn();
-        }
-        printArr(grid);
-        System.out.println("Good game! The computer score was: " + score);
-        System.exit(0);
     }
 
     // ============Movement methods============
@@ -188,7 +180,7 @@ public class Computer implements Game {
         }
     }
 
-    boolean isLoss() {
+    public boolean isLoss() {
         for (int i = 0; i < grid.length; i++) {
             for (int j = 0; j < grid.length; j++) {
                 // check empty tiles
@@ -222,6 +214,10 @@ public class Computer implements Game {
             }
         }
         return true;
+    }
+
+    public int getScore() {
+        return score;
     }
 
     public static void printArr(int[][] a) {
