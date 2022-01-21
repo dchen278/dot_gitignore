@@ -220,6 +220,10 @@ public class Computer {
         return score;
     }
 
+    public int[][] getGrid() {
+        return grid;
+    }
+
     public static void printArr(int[][] a) {
         Tiles.printBorder(a.length);
         System.out.println();
