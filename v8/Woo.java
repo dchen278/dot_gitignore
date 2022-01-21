@@ -1,11 +1,13 @@
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.InputMismatchException;
 import gamemodes.*;
 
 public class Woo {
     static Game poggers;
     public static final String directions = "wasd";
+    public static int gameMode;
 
     public static void main(String[] args) {
         System.out.print("\u001B[92m"
@@ -28,10 +30,16 @@ public class Woo {
         System.out.println("5. " + VSComputer.about());
         System.out.println("6. PVP");
         System.out.println("7. Exit");
-        int gameMode = input.nextInt();
-        while (gameMode > 7 || gameMode < 1) {
-            gameMode = input.nextInt();
+
+        while (gameMode < 1 || gameMode > 7) {
+            try {
+                gameMode = input.nextInt();
+            } catch (InputMismatchException e) {
+                System.out.println("Please enter a valid game mode.");
+                input.nextLine();
+            }
         }
+
 
         if (gameMode == 1) {
             poggers = new Classic();

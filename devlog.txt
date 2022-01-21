@@ -66,6 +66,7 @@ Jaylen: UML diagrams
 All: Decided on final idea 
 Yat Long: Create basic functional game
 David: Added ASCII Art and Credits
+    - Proposed vsComputer gamemode
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 2022-01-17
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -89,5 +90,6 @@ Yat Long: update readme
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 2022-1-20
 ALL: improved Computer AI for vsComputer gamemode. 
-
 ==============================================================
+2022-1-21
+David: Adjust Woo so that it's more foolproof for inputs
