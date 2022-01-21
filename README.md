@@ -13,5 +13,7 @@ cd /path/to/dot_gitignore
 javac Woo.java
 java Woo
 ```
+3. Follow instructions displayed on terminal
+4. Play the game
 
 ![Tux, the Linux mascot](/flag.jpg)
