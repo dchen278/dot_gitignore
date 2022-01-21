@@ -13,9 +13,32 @@ public class Tiles {
         return "\u001B[48;5;" + color + "m";
     }
 
-    public static void printTile(int value) {
-        
-        System.out.print(tileColor(value) + "\u001B[90m" + "  " + ((value == 0) ? " " : value) + "  " + RESET + "|");
+    public static void printTile(int value, int[][] grid) {
+        int maxLength = getMaxLength(grid);
+        String spaceString = getSpacesString(maxLength);
+        // System.out.println(spaceString.length());
+        String padding = getPaddingString(value, maxLength);
+
+        System.out.print(tileColor(value) + "\u001B[90m" + padding + spaceString + ((value == 0) ? " " : value) + spaceString + padding + RESET + "|");
+    }
+
+    public static String getSpacesString(int num) {
+        String result = "";
+        for (int i = 0; i < num; i++) {
+            result += " ";
+        }
+        return result;
+    }
+
+    public static String getPaddingString(int value, int max) {
+        int stringLength = Integer.toString(value).length();
+        int diff = max - stringLength;
+        String result = "";
+
+        for (int i = 0; i < diff; i++) {
+            result += " ";
+        }
+        return result;
     }
 
     public static void printBorder(int a, int[] b) {
@@ -38,6 +61,18 @@ public class Tiles {
         for (int i = 0; i < a * 6; i++) {
             System.out.print("\u001B[95m" + "-" + RESET);
         }
+    }
+
+    public static int getMaxLength(int[][] a) {
+        int max = 0;
+        for (int[] arr : a) {
+            for (int i = 0; i < arr.length; i++) {
+                if (arr[i] > max) {
+                    max = arr[i];
+                }
+            }
+        }
+        return Integer.toString(max).length();
     }
 
 }

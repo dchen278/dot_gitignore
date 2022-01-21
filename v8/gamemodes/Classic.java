@@ -263,7 +263,7 @@ public class Classic implements Game {
 
         for (int i = 0; i < a.length; i++) {
             for (int j = 0; j < a.length; j++) {
-                Tiles.printTile(a[i][j]);
+                Tiles.printTile(a[i][j], a);
             }
             System.out.println();
             Tiles.printBorder(a.length, a[i]);
