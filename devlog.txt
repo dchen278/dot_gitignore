@@ -100,4 +100,5 @@ David: Devised better approach to AI gameplay
 2022-1-22
 David: Added a whole new AI which is significantly smarter
     - Consistently gets up to 1024 or even 2048 at times
-    - Averages 200 moves
+    - Averages 200 moves and returns best move
+David: Add new mode where you can sit back and watch the bot play 2048 Mania

@@ -7,15 +7,21 @@ import util.*;
 
 public class VSComputer extends Classic {
     private int difficulty;
+    private Boolean interactive;
     public ComputerInterface bot;
 
     public static String about() {
         return "2048 vsComputer. Play 2048 against an AI. ";
     }
 
-    public VSComputer(int difficulty) {
+    public static String aboutWatch() {
+        return "Watch an AI play 2048. ";
+    }
+
+    public VSComputer(int difficulty, Boolean interactive) {
         super();
         this.difficulty = difficulty;
+        this.interactive = interactive;
         if (difficulty == 1) {
              bot = new Computer();
         } else {
@@ -28,8 +34,11 @@ public class VSComputer extends Classic {
             clearScreen();
             bot.playTurn();
             System.out.println("====================================");
-            this.playTurn();
-            // wait(500);
+            if (interactive) {
+                this.playTurn();
+            } else {
+                wait(500);
+            }
         }
         clearScreen();
         System.out.println("Bot Grid:");

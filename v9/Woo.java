@@ -27,8 +27,9 @@ public class Woo {
         System.out.println("3. " + Anti.about());
         System.out.println("4. " + Restrict.about());
         System.out.println("5. " + VSComputer.about());
-        System.out.println("6. PVP");
-        System.out.println("7. Exit");
+        System.out.println("6. " + VSComputer.aboutWatch());
+        System.out.println("7. PVP");
+        System.out.println("8. Exit");
         int gameMode = input.nextInt();
         while (gameMode > 7 || gameMode < 1) {
             gameMode = input.nextInt();
@@ -75,9 +76,17 @@ public class Woo {
                 System.out.println("Please enter a valid difficulty");
                 difficulty = input.nextInt();
             }
-            poggers = new VSComputer(difficulty);
+            poggers = new VSComputer(difficulty, true);
         } else if (gameMode == 6) {
-            poggers = new Classic();
+            System.out.println("Please enter difficulty of the computer you would like to observe: ");
+            System.out.println("1. Easy");
+            System.out.println("2. Insane");
+            int difficulty = input.nextInt();
+            while (difficulty > 2 || difficulty < 1) {
+                System.out.println("Please enter a valid difficulty");
+                difficulty = input.nextInt();
+            }
+            poggers = new VSComputer(difficulty, false);
         } else {
             System.exit(0);
         }
