@@ -15,7 +15,11 @@ public class Tiles {
 
     public static void printTile(int value, int[][] grid) {
         int maxLength = getMaxLength(grid);
-        String tile = String.format( "|" + tileColor(value) + "\u001B[90m" + " %-" + maxLength + "s" + RESET, (value == 0) ? " " : value);
+        // used to fix issue with expanding board size.
+        if (maxLength < 3) {
+            maxLength = 3;
+        }
+        String tile = String.format(tileColor(value) + "\u001B[90m" + " %-" + maxLength + "s" + RESET + "|", (value == 0) ? " " : value);
         System.out.print(tile);
         }
 

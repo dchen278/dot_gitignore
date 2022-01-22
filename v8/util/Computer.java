@@ -231,9 +231,6 @@ public class Computer {
         for (int i = 0; i < a.length; i++) {
             for (int j = 0; j < a.length; j++) {
                 Tiles.printTile(a[i][j], a);
-                if (j == a.length - 1) {
-                    System.out.print(" |");
-                }
             }
             System.out.println();
             Tiles.printBorder(a.length, a[i]);
