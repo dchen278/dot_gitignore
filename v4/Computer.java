@@ -18,7 +18,7 @@ public class Computer implements Game {
         }
     }
 
-    private void playTurn() {
+    void playTurn() {
         String move;
         System.out.println("Score: " + score);
         printArr(grid);
@@ -188,7 +188,7 @@ public class Computer implements Game {
         }
     }
 
-    private boolean isLoss() {
+    boolean isLoss() {
         for (int i = 0; i < grid.length; i++) {
             for (int j = 0; j < grid.length; j++) {
                 // check empty tiles
