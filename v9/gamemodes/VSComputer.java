@@ -28,7 +28,7 @@ public class VSComputer extends Classic {
             clearScreen();
             bot.playTurn();
             System.out.println("====================================");
-            // this.playTurn();
+            this.playTurn();
             // wait(500);
         }
         clearScreen();
@@ -39,7 +39,6 @@ public class VSComputer extends Classic {
         this.printArr(this.grid);
         if (bot.isLoss()) {
             System.out.println("GG! You won against the computer!");
-
         } else {
             System.out.println("Not POG! You lost!");
         } 
