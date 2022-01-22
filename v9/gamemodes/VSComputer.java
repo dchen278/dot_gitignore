@@ -3,10 +3,8 @@ package gamemodes;
 import util.Computer;
 import util.HardComputer;
 import util.ComputerInterface;
-import util.*;
 
 public class VSComputer extends Classic {
-    private int difficulty;
     private Boolean interactive;
     public ComputerInterface bot;
 
@@ -15,12 +13,11 @@ public class VSComputer extends Classic {
     }
 
     public static String aboutWatch() {
-        return "Watch an AI play 2048. ";
+        return "Watch an AI play 2048. Use Ctrl+C to exit. ";
     }
 
     public VSComputer(int difficulty, Boolean interactive) {
         super();
-        this.difficulty = difficulty;
         this.interactive = interactive;
         if (difficulty == 1) {
              bot = new Computer();
