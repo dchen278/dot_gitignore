@@ -72,6 +72,7 @@ David: Added ASCII Art and Credits
 David: Added colored tiles and borders
     - Custom Tiles class for colored output
 David: Redesigned team flag
+    - Proposed Play vs AI
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 2022-01-18
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -79,7 +80,8 @@ ALL: Implemented v3:
     -add more gamemodes (Customboard, Player vs Computer)
 Yat Long: create Anti gamemode
 Jaylen: create Restrict gamemode.
-David: Add leader board and vs computer
+David: Add leaderboard and vs computer
+    - implemented basic method for AI to play
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 2022-1-19
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -92,3 +94,6 @@ David: Fixed compilation error; solved by importing the interface on its own
 ALL: improved Computer AI for vsComputer gamemode. 
 David: Devised better approach to AI gameplay
 ==============================================================
+2022-1-22
+David: Added a whole new AI which is significantly smarter
+    - Consistently gets up to 1024 or even 2048 at times
