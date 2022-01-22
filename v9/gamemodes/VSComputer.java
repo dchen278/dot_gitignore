@@ -29,7 +29,7 @@ public class VSComputer extends Classic {
             bot.playTurn();
             System.out.println("====================================");
             // this.playTurn();
-            wait(500);
+            // wait(500);
         }
         clearScreen();
         System.out.println("Bot Grid:");
