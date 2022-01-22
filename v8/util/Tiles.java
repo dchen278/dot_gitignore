@@ -18,9 +18,12 @@ public class Tiles {
         String spaceString = getSpacesString(maxLength);
         // System.out.println(spaceString.length());
         String padding = getPaddingString(value, maxLength);
+        String tile = String.format( "|" + tileColor(value) + "\u001B[90m" + " %-" + maxLength + "s" + RESET, (value == 0) ? " " : value);
+        System.out.print(tile);
+        //System.out.print(tileColor(value) + "\u001B[90m" + padding + spaceString + ((value == 0) ? " " : value) + spaceString + padding + RESET + "|");
+        }
 
-        System.out.print(tileColor(value) + "\u001B[90m" + padding + spaceString + ((value == 0) ? " " : value) + spaceString + padding + RESET + "|");
-    }
+    
 
     public static String getSpacesString(int num) {
         String result = "";
