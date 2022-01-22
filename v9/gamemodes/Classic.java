@@ -4,9 +4,9 @@ import java.util.Scanner;
 import util.Tiles;
 
 public class Classic implements Game {
-     int[][] grid;
-     int score;
-     Scanner sc;
+    int[][] grid;
+    int score;
+    Scanner sc;
 
     public static String about() {
         return "Classic 2048";
@@ -258,15 +258,15 @@ public class Classic implements Game {
     }
 
     protected static void printArr(int[][] a) {
-        Tiles.printBorder(a.length);
+        Tiles.printBorder(a);
         System.out.println();
 
         for (int i = 0; i < a.length; i++) {
             for (int j = 0; j < a.length; j++) {
-                Tiles.printTile(a[i][j]);
+                Tiles.printTile(a[i][j], a);
             }
             System.out.println();
-            Tiles.printBorder(a.length, a[i]);
+            Tiles.printBorder(a);
             System.out.println();
         }
         System.out.println();
