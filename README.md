@@ -17,6 +17,7 @@ java Woo
 4. Play the game
 
 ### Cool Features
-AI - Play against our carefully curated AI 
+ - AI - Play against our carefully curated AI   
+   - The current AI can reach 1028 and even 2048 at times, making it decently competitive against the average user. 
 
 ![Tux, the Linux mascot](/flag.jpg)
