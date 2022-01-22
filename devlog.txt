@@ -17,11 +17,10 @@ OBSTACLES OVERCOME
 - Fix freezing bug. Caused by trying to spawn tiles when board is full. 
 - After we restructured, importing gamemodes.* did not work for interface Game. We had to import Game from gamemodes explicitly for it to work. 
   After checking this again, it seems like we just didn't re-compile the gamemode files after moving Game.java.
+- Fix board
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-- Board doesn't line up. 
-- Board display kinda sussy
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -102,3 +101,4 @@ David: Added a whole new AI which is significantly smarter
     - Consistently gets up to 1024 or even 2048 at times
     - Averages 200 moves and returns best move
 David: Add new mode where you can sit back and watch the bot play 2048 Mania
+Yat Long: fix board
