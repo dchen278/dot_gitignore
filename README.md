@@ -13,6 +13,8 @@ cd /path/to/dot_gitignore
 javac Woo.java
 java Woo
 ```
+3. Follow instructions displayed on terminal
+4. Play the game
 
 ### Cool Features
 AI - Play against our carefully curated AI 
