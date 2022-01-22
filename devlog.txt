@@ -15,7 +15,8 @@ OBSTACLES OVERCOME
 - Originally, the game wouldn't slide all tiles to it's proper place. This was fixed by running the move methods multiple times.
 - Game would not exit after the player lost. It turned out that we simply didn't exit after the game was done. 
 - Fix freezing bug. Caused by trying to spawn tiles when board is full. 
-- After we restructured, importing gamemodes.* did not work for interface Game. We had to import Game from gamemodes explicitly for it to work. After checking this again, it seems like we just didn't re-compile the gamemode files after moving Game.java.
+- After we restructured, importing gamemodes.* did not work for interface Game. We had to import Game from gamemodes explicitly for it to work. 
+  After checking this again, it seems like we just didn't re-compile the gamemode files after moving Game.java.
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
