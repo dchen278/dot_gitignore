@@ -29,6 +29,7 @@ public class VSComputer extends Classic {
             bot.playTurn();
             System.out.println("====================================");
             // this.playTurn();
+            wait(500);
         }
         clearScreen();
         System.out.println("Bot Grid:");
@@ -42,6 +43,14 @@ public class VSComputer extends Classic {
         } else {
             System.out.println("Not POG! You lost!");
         } 
+    }
+
+    public static void wait(int millis) {
+        try {
+            Thread.sleep(millis);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
 

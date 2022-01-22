@@ -67,9 +67,9 @@ public class Woo {
             }
             poggers = new Restrict(key1, key2);
         } else if (gameMode == 5) {
-            System.out.println("Please enter  difficulty of the computer: ");
+            System.out.println("Please enter difficulty of the computer: ");
             System.out.println("1. Easy");
-            System.out.println("2. Hard");
+            System.out.println("2. Insane");
             int difficulty = input.nextInt();
             while (difficulty > 2 || difficulty < 1) {
                 System.out.println("Please enter a valid difficulty");
