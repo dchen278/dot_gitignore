@@ -258,7 +258,7 @@ public class Classic implements Game {
     }
 
     protected static void printArr(int[][] a) {
-        Tiles.printBorder(a.length);
+        Tiles.printBorder(a);
         System.out.println();
 
         for (int i = 0; i < a.length; i++) {
@@ -266,7 +266,7 @@ public class Classic implements Game {
                 Tiles.printTile(a[i][j], a);
             }
             System.out.println();
-            Tiles.printBorder(a.length, a[i]);
+            Tiles.printBorder(a);
             System.out.println();
         }
         System.out.println();

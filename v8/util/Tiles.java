@@ -23,24 +23,13 @@ public class Tiles {
         System.out.print(tile);
         }
 
-    public static void printBorder(int a, int[] b) {
-        // Prints the border of the game board dashes colored
-        // add the number of digits in b to the length of the border
-        int digits = 0;
-        for (int num : b) {
-            if (num != 0 && num > 10) {
-                digits += Integer.toString(num).length();
-            }
+    public static void printBorder(int[][] a) {
+        int maxLength = getMaxLength(a);
+        if (maxLength < 3) {
+            maxLength = 3;
         }
-
-        for (int i = 0; i < a * 6 + digits; i++) {
-            System.out.print("\u001B[95m" + "-" + RESET);
-        }
-    }
-
-    public static void printBorder(int a) {
         // Prints the border of the game board dashes colored
-        for (int i = 0; i < a * 6; i++) {
+        for (int i = 0; i <  (maxLength + 2)* a.length; i++) {
             System.out.print("\u001B[95m" + "-" + RESET);
         }
     }
