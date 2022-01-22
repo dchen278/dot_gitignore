@@ -86,8 +86,9 @@ David: Add leader board and vs computer
 ALL: restructure files
 Jaylen: create flowchart
 Yat Long: update readme
+David: Fixed compilation error; solved by importing the interface on its own
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 2022-1-20
 ALL: improved Computer AI for vsComputer gamemode. 
-
+David: Devised better approach to AI gameplay
 ==============================================================
