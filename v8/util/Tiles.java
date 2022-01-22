@@ -15,34 +15,9 @@ public class Tiles {
 
     public static void printTile(int value, int[][] grid) {
         int maxLength = getMaxLength(grid);
-        String spaceString = getSpacesString(maxLength);
-        // System.out.println(spaceString.length());
-        String padding = getPaddingString(value, maxLength);
         String tile = String.format( "|" + tileColor(value) + "\u001B[90m" + " %-" + maxLength + "s" + RESET, (value == 0) ? " " : value);
         System.out.print(tile);
-        //System.out.print(tileColor(value) + "\u001B[90m" + padding + spaceString + ((value == 0) ? " " : value) + spaceString + padding + RESET + "|");
         }
-
-    
-
-    public static String getSpacesString(int num) {
-        String result = "";
-        for (int i = 0; i < num; i++) {
-            result += " ";
-        }
-        return result;
-    }
-
-    public static String getPaddingString(int value, int max) {
-        int stringLength = Integer.toString(value).length();
-        int diff = max - stringLength;
-        String result = "";
-
-        for (int i = 0; i < diff; i++) {
-            result += " ";
-        }
-        return result;
-    }
 
     public static void printBorder(int a, int[] b) {
         // Prints the border of the game board dashes colored
