@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.IOException;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import gamemodes.*;
 
@@ -7,6 +8,7 @@ public class Woo {
     static Game poggers;
     public static String username;
     public static final String directions = "wasd";
+    public static int gameMode;
 
     public static void main(String[] args) {
 
@@ -51,9 +53,13 @@ public class Woo {
         System.out.println("7. Hmmm I wonder what this is...");
         System.out.println("8. Exit");
 
-        int gameMode = input.nextInt();
-        while (gameMode > 7 || gameMode < 1) {
-            gameMode = input.nextInt();
+        while (gameMode < 1 || gameMode > 8) {
+            try {
+                gameMode = input.nextInt();
+            } catch (InputMismatchException e) {
+                System.out.println("Please enter a valid game mode.");
+                input.nextLine();
+            }
         }
 
         if (gameMode == 1) {
@@ -136,6 +142,7 @@ public class Woo {
             System.out.println("\n \u001B[91m" + "We do a little trolling \u001B[0m \n");
 
         } else {
+            System.out.println("\u001B[91m" + "Bye! Hope you come back soon \u001B[0m \n");
             System.exit(0);
         }
 
