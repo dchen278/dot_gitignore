@@ -1,13 +1,12 @@
-
 package util;
 
-import java.util.*;
+import java.lang.InterruptedException;
 
-public class Computer implements ComputerInterface {
+public class EasyComputer implements ComputerInterface {
     private int[][] grid;
     private int score;
 
-    public Computer() {
+    public EasyComputer() {
         score = 0;
         grid = new int[4][4];
         grid[(int) (Math.random() * 4)][(int) (Math.random() * 4)] = 2;
@@ -22,21 +21,14 @@ public class Computer implements ComputerInterface {
     }
 
     public void playTurn() {
-        System.out.println("Computer Score: " + score);
+
+        System.out.println("Easy Computer Score: " + score);
         printArr(grid);
 
-        double random = Math.random();
+        int move = (int) (Math.random() * 4);
+        printMove(move);
 
-        // move multiple length times to ensure all possible moves are made
-        if (random > 0 && random < 0.1) {
-            for (int i = 0; i < grid.length; i++) {
-                moveDown();
-            }
-            combineDown();
-            for (int i = 0; i < grid.length; i++) {
-                moveDown();
-            }
-        } else if (random < 0.5) {
+        if (move == 0) {
             for (int i = 0; i < grid.length; i++) {
                 moveUp();
             }
@@ -44,7 +36,15 @@ public class Computer implements ComputerInterface {
             for (int i = 0; i < grid.length; i++) {
                 moveUp();
             }
-        } else if (random < 0.7) {
+        } else if (move == 1) {
+            for (int i = 0; i < grid.length; i++) {
+                moveDown();
+            }
+            combineDown();
+            for (int i = 0; i < grid.length; i++) {
+                moveDown();
+            }
+        } else if (move == 2) {
             for (int i = 0; i < grid.length; i++) {
                 moveLeft();
             }
@@ -52,7 +52,7 @@ public class Computer implements ComputerInterface {
             for (int i = 0; i < grid.length; i++) {
                 moveLeft();
             }
-        } else if (random < 1) {
+        } else {
             for (int i = 0; i < grid.length; i++) {
                 moveRight();
             }
@@ -75,6 +75,18 @@ public class Computer implements ComputerInterface {
                 }
                 break;
             }
+        }
+    }
+
+    public static void printMove(int direction) {
+        if (direction == 0) {
+            System.out.println("Computer chose move: up");
+        } else if (direction == 1) {
+            System.out.println("Computer chose move: down");
+        } else if (direction == 2) {
+            System.out.println("Computer chose move: left");
+        } else if (direction == 3) {
+            System.out.println("Computer chose move: right");
         }
     }
 

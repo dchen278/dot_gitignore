@@ -11,7 +11,7 @@ public class Restrict extends Classic {
     
     public Restrict(String key1, String key2) {
         //variable "directions" contain directions that the player cannot use
-        directions = key1 + key2;
+        directions = key1 + " " + key2;
         score = 0;
         grid = new int[4][4];
         grid[(int) (Math.random() * 4)][(int) (Math.random() * 4)] = 2;
@@ -32,26 +32,78 @@ public class Restrict extends Classic {
 
     protected boolean isCommand(String s) {
 
-        if (s.equals("exit") || s.equals("w") || s.equals("s") || s.equals("a") || s.equals("d")) {
-            //checks if user input is one of the forbidden directions
-            if (directions.indexOf(s) < 0) {
+        if (s.equals("exit") || directions.indexOf(s) >= 0) {
                 return true;
-            } else { 
-                return false; 
-            }
         }
         return false;
     }
     
-    public void run() {
-        // play until loss
-        while (!isLoss()) {
-            playTurn();
-            clearScreen();
-        }
+    protected void playTurn() {
+        String move;
+        System.out.println("Score: " + score);
         printArr(grid);
-        System.out.println("Good game! Your final score was: " + score);
-        System.exit(0);
+        System.out.print("Type \"" + directions + "\" " + " to move tiles, \"exit\" to terminate game: ");
+        move = sc.nextLine().trim().toLowerCase();
+
+        while (!isCommand(move)) {
+            System.out.print("Type \"" + directions + "\" " + " to move tiles, \"exit\" to terminate game: ");
+            move = sc.nextLine();
+            move = move.trim();
+            move = move.toLowerCase();
+        }
+
+        // move multiple length times to ensure all possible moves are made
+        if (move.equals("s")) {
+            for (int i = 0; i < grid.length; i++) {
+                moveDown();
+            }
+            combineDown();
+            for (int i = 0; i < grid.length; i++) {
+                moveDown();
+            }
+        } else if (move.equals("w")) {
+            for (int i = 0; i < grid.length; i++) {
+                moveUp();
+            }
+            combineUp();
+            for (int i = 0; i < grid.length; i++) {
+                moveUp();
+            }
+        } else if (move.equals("a")) {
+            for (int i = 0; i < grid.length; i++) {
+                moveLeft();
+            }
+            combineLeft();
+            for (int i = 0; i < grid.length; i++) {
+                moveLeft();
+            }
+        } else if (move.equals("d")) {
+            for (int i = 0; i < grid.length; i++) {
+                moveRight();
+            }
+            combineRight();
+            for (int i = 0; i < grid.length; i++) {
+                moveRight();
+            }
+        } else {
+            System.out.println("Game has been terminated...");
+            System.exit(0);
+        }
+
+        // spawn new block at random location
+        while (!isFull()) {
+            int x = (int) (Math.random() * grid.length);
+            int y = (int) (Math.random() * grid.length);
+            // spawn 2 or 4
+            if (grid[y][x] == 0) {
+                if (Math.random() < 0.75) {
+                    grid[y][x] = 2;
+                } else {
+                    grid[y][x] = 4;
+                }
+                break;
+            }
+        }
     }
     
 }

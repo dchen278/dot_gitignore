@@ -29,8 +29,6 @@ public class Woo {
         wait(2500);
         System.out.print("\033[2J" + "\033[?25h");
 
-        checkAndMakeJson();
-
         username = System.getProperty("user.name");
         System.out.println("Welcome " + "\u001B[92m" + username + "! \u001B[0m \n");
 

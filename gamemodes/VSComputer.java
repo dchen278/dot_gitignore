@@ -1,18 +1,44 @@
 package gamemodes;
 
+import util.EasyComputer;
 import util.Computer;
+import util.HardComputer;
+import util.ComputerInterface;
 
 public class VSComputer extends Classic {
+    private Boolean interactive;
+    public ComputerInterface bot;
+
     public static String about() {
         return "2048 vsComputer. Play 2048 against an AI. ";
     }
+
+    public static String aboutWatch() {
+        return "Watch an AI play 2048. Use Ctrl+C to exit. ";
+    }
+
+    public VSComputer(int difficulty, Boolean interactive) {
+        super();
+        this.interactive = interactive;
+        if (difficulty == 1) {
+             bot = new EasyComputer();
+        } else if (difficulty == 2) {
+            bot = new Computer();
+        } else {
+            bot = new HardComputer();
+        }
+    }
+
     public void run() {
-        Computer bot = new Computer();
         while (!bot.isLoss() && !this.isLoss()) {
             clearScreen();
             bot.playTurn();
             System.out.println("====================================");
-            this.playTurn();
+            if (interactive) {
+                this.playTurn();
+            } else {
+                wait(500);
+            }
         }
         clearScreen();
         System.out.println("Bot Grid:");
@@ -22,10 +48,17 @@ public class VSComputer extends Classic {
         this.printArr(this.grid);
         if (bot.isLoss()) {
             System.out.println("GG! You won against the computer!");
-
         } else {
             System.out.println("Not POG! You lost!");
         } 
+    }
+
+    public static void wait(int millis) {
+        try {
+            Thread.sleep(millis);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
 
