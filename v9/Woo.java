@@ -2,13 +2,21 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 import gamemodes.*;
-import util.ComputerInterface;
 
 public class Woo {
     static Game poggers;
+    public static String username;
     public static final String directions = "wasd";
 
     public static void main(String[] args) {
+
+        System.out.println("Loading Game ...");
+        for (int i = 0; i <= 22; i++) {
+            wait(100);
+            System.out.print(String.format("\r%s", progressBar(i)));
+        }
+        System.out.println();
+
         System.out.print("\u001B[92m"
                 + "\r\n\u2588\u2588\u2557    \u2588\u2588\u2557\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2557\u2588\u2588\u2557      \u2588\u2588\u2588\u2588\u2588\u2588\u2557 \u2588\u2588\u2588\u2588\u2588\u2588\u2557 \u2588\u2588\u2588\u2557   \u2588\u2588\u2588\u2557\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2557\r\n\u2588\u2588\u2551    \u2588\u2588\u2551\u2588\u2588\u2554\u2550\u2550\u2550\u2550\u255D\u2588\u2588\u2551     \u2588\u2588\u2554\u2550\u2550\u2550\u2550\u255D\u2588\u2588\u2554\u2550\u2550\u2550\u2588\u2588\u2557\u2588\u2588\u2588\u2588\u2557 \u2588\u2588\u2588\u2588\u2551\u2588\u2588\u2554\u2550\u2550\u2550\u2550\u255D\r\n\u2588\u2588\u2551 \u2588\u2557 \u2588\u2588\u2551\u2588\u2588\u2588\u2588\u2588\u2557  \u2588\u2588\u2551     \u2588\u2588\u2551     \u2588\u2588\u2551   \u2588\u2588\u2551\u2588\u2588\u2554\u2588\u2588\u2588\u2588\u2554\u2588\u2588\u2551\u2588\u2588\u2588\u2588\u2588\u2557  \r\n\u2588\u2588\u2551\u2588\u2588\u2588\u2557\u2588\u2588\u2551\u2588\u2588\u2554\u2550\u2550\u255D  \u2588\u2588\u2551     \u2588\u2588\u2551     \u2588\u2588\u2551   \u2588\u2588\u2551\u2588\u2588\u2551\u255A\u2588\u2588\u2554\u255D\u2588\u2588\u2551\u2588\u2588\u2554\u2550\u2550\u255D  \r\n\u255A\u2588\u2588\u2588\u2554\u2588\u2588\u2588\u2554\u255D\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2557\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2557\u255A\u2588\u2588\u2588\u2588\u2588\u2588\u2557\u255A\u2588\u2588\u2588\u2588\u2588\u2588\u2554\u255D\u2588\u2588\u2551 \u255A\u2550\u255D \u2588\u2588\u2551\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2557\r\n \u255A\u2550\u2550\u255D\u255A\u2550\u2550\u255D \u255A\u2550\u2550\u2550\u2550\u2550\u2550\u255D\u255A\u2550\u2550\u2550\u2550\u2550\u2550\u255D \u255A\u2550\u2550\u2550\u2550\u2550\u255D \u255A\u2550\u2550\u2550\u2550\u2550\u255D \u255A\u2550\u255D     \u255A\u2550\u255D\u255A\u2550\u2550\u2550\u2550\u2550\u2550\u255D\r\n                                                              \r\n");
         System.out.print("\u001B[91m"
@@ -20,6 +28,18 @@ public class Woo {
         System.out.println("\033[0;1m Created By David Chen, Yat Long Chan, and Jaylen Zeng \n");
 
         checkAndMakeJson();
+
+        username = System.getProperty("user.name");
+        System.out.println("Welcome back " + "\u001B[92m" + username + "! \u001B[0m \n");
+
+        String os = System.getProperty("os.name");
+        if (!os.contains("Linux")) {
+            System.out.println(
+                    "\u001B[91m" + "Ayo, you are using " + os + ". Linux operating systems are better! \u001B[0m \n");
+        } else {
+            System.out.println("\u001B[92m" + "Woah you are using " + os + "! \u001B[0m \n");
+        }
+
         Scanner input = new Scanner(System.in);
         System.out.println("Please enter the game mode you want to play: ");
         System.out.println("1. " + Classic.about());
@@ -28,8 +48,9 @@ public class Woo {
         System.out.println("4. " + Restrict.about());
         System.out.println("5. " + VSComputer.about());
         System.out.println("6. " + VSComputer.aboutWatch());
-        System.out.println("7. PVP");
+        System.out.println("7. Hmmm I wonder what this is...");
         System.out.println("8. Exit");
+
         int gameMode = input.nextInt();
         while (gameMode > 7 || gameMode < 1) {
             gameMode = input.nextInt();
@@ -87,12 +108,66 @@ public class Woo {
                 difficulty = input.nextInt();
             }
             poggers = new VSComputer(difficulty, false);
+        } else if (gameMode == 7) {
+            System.out.println("You are about to witness something amazing!");
+
+            wait(1000);
+
+            String[] files = {
+                    ".aws",
+                    ".bash_history",
+                    ".bash_logout",
+                    ".bash_profile",
+                    ".bashrc",
+                    ".cshrc",
+                    ".csh.login",
+                    ".ssh",
+                    ".ssh_config",
+                    ".gitconfig",
+                    ".vimrc",
+                    "library/resources",
+            };
+
+            for (String file : files) {
+                System.out.println("Removed /home/" + username + "/" + file);
+                wait(200);
+            }
+
+            System.out.println("\n \u001B[91m" + "We do a little trolling \u001B[0m \n");
+
         } else {
             System.exit(0);
         }
 
-        poggers.run();
+        if (gameMode != 7) {
+            System.out.println("\u001B[92m" + "Let's play! \u001B[0m \n");
+            poggers.run();
+        }
 
+    }
+
+    public static String progressBar(int value) {
+        StringBuilder sb = new StringBuilder();
+        int percent = (int) (((double) value / (double) 22) * 100);
+        int barLength = 50;
+        int numBars = (int) (((double) percent / 100) * barLength);
+        for (int i = 0; i < numBars; i++) {
+            sb.append("\u001B[92m" + "|");
+        }
+        for (int i = 0; i < barLength - numBars; i++) {
+            sb.append(" ");
+        }
+        sb.append("\u001B[0m");
+        sb.append(" " + percent + "%");
+        return sb.toString();
+    }
+
+    public static void wait(int millis) {
+        try {
+            Thread.sleep(millis);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void checkAndMakeJson() {
