@@ -178,15 +178,4 @@ public class Woo {
             e.printStackTrace();
         }
     }
-
-    public static void checkAndMakeJson() {
-        File file = new File("data.json");
-        if (!file.exists()) {
-            try {
-                file.createNewFile();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-    }
 }
