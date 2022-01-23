@@ -95,10 +95,14 @@ David: Fixed compilation error; solved by importing the interface on its own
 2022-1-20
 ALL: improved Computer AI for vsComputer gamemode. 
 David: Devised better approach to AI gameplay
-==============================================================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 2022-1-22
-David: Added a whole new AI which is significantly smarter
+David: Added a whole new AI which is SIGNIFICANTLY smarter
     - Consistently gets up to 1024 or even 2048 at times
     - Averages 200 moves and returns best move
 David: Add new mode where you can sit back and watch the bot play 2048 Mania
 Yat Long: fix board
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2022-1-23
+David: Add progress bar to game
+    - Detect current logged in user and greets them
