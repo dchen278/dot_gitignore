@@ -9,7 +9,7 @@
 This project is a clone of [2048](https://play2048.co/) run on the terminal. Our version is essentially the same as the originial but we have also created different variations of the game.
 
 #### Topics Used
-  - Inheritance \ Interfaces
+  - Inheritance / Interfaces
   - 2D arrays
   - Arrays
   - Iterations
