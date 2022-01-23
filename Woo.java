@@ -33,7 +33,7 @@ public class Woo {
         typingAnimation("\033[0;1m Created By David Chen, Yat Long Chan, and Jaylen Zeng \n");
 
         wait(1500);
-        System.out.print("\033[2J");
+        
         username = System.getProperty("user.name");
         typingAnimation("Hello " + "\u001B[92m" + username + "! \u001B[0m \n");
 
