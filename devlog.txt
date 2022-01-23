@@ -106,3 +106,4 @@ Yat Long: fix board
 2022-1-23
 David: Add progress bar to game
     - Detect current logged in user and greets them
+    - Add cool typing animation to intro screen
