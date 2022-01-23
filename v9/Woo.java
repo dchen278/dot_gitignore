@@ -159,7 +159,7 @@ public class Woo {
         int barLength = 50;
         int numBars = (int) (((double) percent / 100) * barLength);
         for (int i = 0; i < numBars; i++) {
-            sb.append("\u001B[92m" + "|");
+            sb.append("\u001B[92m" + "#");
         }
         for (int i = 0; i < barLength - numBars; i++) {
             sb.append(" ");
