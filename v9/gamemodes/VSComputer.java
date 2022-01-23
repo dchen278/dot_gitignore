@@ -1,5 +1,6 @@
 package gamemodes;
 
+import util.EasyComputer;
 import util.Computer;
 import util.HardComputer;
 import util.ComputerInterface;
@@ -20,7 +21,9 @@ public class VSComputer extends Classic {
         super();
         this.interactive = interactive;
         if (difficulty == 1) {
-             bot = new Computer();
+             bot = new EasyComputer();
+        } else if (difficulty == 2) {
+            bot = new Computer();
         } else {
             bot = new HardComputer();
         }
