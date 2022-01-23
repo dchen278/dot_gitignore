@@ -21,8 +21,8 @@ This project is a clone of [2048](https://play2048.co/) run on the terminal. Our
   - Strings
 
 #### Cool Features
- - AI 
-   - The current AI can reach 1028 and even 2048 at times, making it decently competitive against the average user. 
+ - AI - The current AI can reach 1028 and even 2048 at times, making it decently competitive against the average user. 
+ - A **variety** of other games to choose from
 
 #### Gamemodes
 - **Classic**: Nothing special. Just the vanilla version
