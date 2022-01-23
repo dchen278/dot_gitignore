@@ -11,8 +11,10 @@ This project is a clone of [2048](https://play2048.co/) run on the terminal. Our
 #### Topics Used
   - Inheritance \ Interfaces
   - 2D arrays
-  - Iteration
+  - Arrays
+  - Iterations
   - User inputs (Scanner)
+  - Wrapper classes
 
 ### Cool Features
  - AI 
