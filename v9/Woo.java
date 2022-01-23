@@ -11,7 +11,7 @@ public class Woo {
     public static void main(String[] args) {
         clearScreen();
         System.out.println("Loading Game ...");
-        for (int i = 0; i <= 22; i++) {
+        for (int i = 0; i <= 10; i++) {
             wait(100);
             System.out.print(String.format("\r%s", progressBar(i)));
         }
@@ -165,7 +165,7 @@ public class Woo {
 
     public static String progressBar(int value) {
         StringBuilder sb = new StringBuilder();
-        int percent = (int) (((double) value / (double) 22) * 100);
+        int percent = (int) (((double) value / (double) 10) * 100);
         int barLength = 50;
         int numBars = (int) (((double) percent / 100) * barLength);
         for (int i = 0; i < numBars; i++) {
