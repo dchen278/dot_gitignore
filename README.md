@@ -5,6 +5,9 @@
 - [Yat Long Chan](https://github.com/ychan2005) 
 - [Jaylen Zeng](https://github.com/JaylenZeng)
 
+## Song of the Week: 
+ - [Señorita](https://open.spotify.com/track/6v3KW9xbzN5yKLt9YKDYA2?si=9b865b40fc364c27) by Shawn Mendes
+
 ## Project Description
 This project is a clone of [2048](https://play2048.co/) run on the terminal. Our version is essentially the same as the originial but we have also created different variations of the game.
 
