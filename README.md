@@ -19,6 +19,7 @@ This project is a clone of [2048](https://play2048.co/) run on the terminal. Our
   - User inputs (Scanner) 
   - Wrapper classes (Integer)
   - Strings
+  - Different access modifiers
 
 #### Cool Features
  - AI - The current AI can reach 1028 and even 2048 at times, making it decently competitive against the average user. 
