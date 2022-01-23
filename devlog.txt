@@ -103,3 +103,4 @@ Yat Long: fix board
 David: Add progress bar to game
     - Detect current logged in user and greets them
     - Add cool typing animation to intro screen
+David & Yat Long: Update readme
