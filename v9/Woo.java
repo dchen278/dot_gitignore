@@ -77,7 +77,7 @@ public class Woo {
             poggers = new Anti();
         } else if (gameMode == 4) {
             input.nextLine();
-            System.out.println("Enter the first direction that you can't use (w a s d):");
+            System.out.println("Enter the first direction that you want to use (w a s d):");
             String key1 = input.nextLine();
             key1.trim().toLowerCase();
             while (directions.indexOf(key1) < 0) {
@@ -85,7 +85,7 @@ public class Woo {
                 key1 = input.nextLine();
                 key1.trim().toLowerCase();
             }
-            System.out.println("Enter the second direction that you can't use (w a s d): \nDon't pick the same one!");
+            System.out.println("Enter the second direction that you want to use (w a s d): \nDon't pick the same one!");
             String key2 = input.nextLine();
             key2.trim().toLowerCase();
             while (directions.indexOf(key1) < 0 || key1.equals(key2)) {
@@ -96,20 +96,22 @@ public class Woo {
             poggers = new Restrict(key1, key2);
         } else if (gameMode == 5) {
             System.out.println("Please enter difficulty of the computer: ");
-            System.out.println("1. Easy");
-            System.out.println("2. Insane");
+            System.out.println("1. Easier");
+            System.out.println("2. Easy");
+            System.out.println("3. Insane");
             int difficulty = input.nextInt();
-            while (difficulty > 2 || difficulty < 1) {
+            while (difficulty > 3 || difficulty < 1) {
                 System.out.println("Please enter a valid difficulty");
                 difficulty = input.nextInt();
             }
             poggers = new VSComputer(difficulty, true);
         } else if (gameMode == 6) {
             System.out.println("Please enter difficulty of the computer you would like to observe: ");
-            System.out.println("1. Easy");
-            System.out.println("2. Insane");
+            System.out.println("1. Easier");
+            System.out.println("2. Easy");
+            System.out.println("3. Insane");
             int difficulty = input.nextInt();
-            while (difficulty > 2 || difficulty < 1) {
+            while (difficulty > 3 || difficulty < 1) {
                 System.out.println("Please enter a valid difficulty");
                 difficulty = input.nextInt();
             }
