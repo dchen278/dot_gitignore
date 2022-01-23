@@ -21,10 +21,12 @@ OBSTACLES OVERCOME
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- none
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-wow! oo!...
+- ANSI escape codes
+- String formatting
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -48,7 +50,6 @@ tales of wisdom gained...
 
 
 2022-01-13
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 David: Made repo
 ALL: Brainstormed ideas
     -Dungeon Crawler
@@ -59,25 +60,21 @@ ALL: Brainstormed ideas
     -2048
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 2022-01-14
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Jaylen: UML diagrams
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 2022-01-15
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 All: Decided on final idea 
 Yat Long: Create basic functional game
 David: Added ASCII Art and Credits
     - Proposed vsComputer gamemode
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 2022-01-17
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 David: Added colored tiles and borders
     - Custom Tiles class for colored output
 David: Redesigned team flag
     - Proposed Play vs AI
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 2022-01-18
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ALL: Implemented v3:
     -add more gamemodes (Customboard, Player vs Computer)
 Yat Long: create Anti gamemode
@@ -86,7 +83,6 @@ David: Add leaderboard and vs computer
     - implemented basic method for AI to play
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 2022-1-19
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ALL: restructure files
 Jaylen: create flowchart
 Yat Long: update readme
@@ -106,3 +102,4 @@ Yat Long: fix board
 2022-1-23
 David: Add progress bar to game
     - Detect current logged in user and greets them
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
