@@ -1,7 +1,5 @@
 package gamemodes;
 
-import java.util.*;
-
 public class Anti extends Classic {
     public static String about() {
         return "Anti 4096. Try to fill up the board before reaching 4096";
@@ -23,7 +21,6 @@ public class Anti extends Classic {
                     break;
                 }
             }
-            sc = new Scanner(System.in);
         }
 
         public void run() {
