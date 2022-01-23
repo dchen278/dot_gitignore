@@ -1,11 +1,11 @@
 # dot_gitignore
 
-### Team Members
+## Team Members
 - [David Chen](https://github.com/dchen278)
 - [Yat Long Chan](https://github.com/ychan2005) 
 - [Jaylen Zeng](https://github.com/JaylenZeng)
 
-### Project Description
+## Project Description
 This project is a clone of [2048](https://play2048.co/) run on the terminal. Our version is essentially the same as the originial but we have also created different variations of the game.
 
 #### Topics Used
@@ -17,7 +17,7 @@ This project is a clone of [2048](https://play2048.co/) run on the terminal. Our
   - Wrapper classes (Integer)
   - Strings
 
-### Cool Features
+#### Cool Features
  - AI 
    - The current AI can reach 1028 and even 2048 at times, making it decently competitive against the average user. 
 
@@ -27,7 +27,7 @@ This project is a clone of [2048](https://play2048.co/) run on the terminal. Our
 - **Restrict**: 2048 but you can only use 2 directions.
 - **VSComputer**: Try to survive longer than an AI player. Try your luck with insane mode
 
-### How-To-Launch
+## How-To-Launch
 1. Either download the ZIP file for this repository or clone it 
 2. In a terminal, enter the following commands
 ```
