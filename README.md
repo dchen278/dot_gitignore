@@ -13,8 +13,9 @@ This project is a clone of [2048](https://play2048.co/) run on the terminal. Our
   - 2D arrays
   - Arrays
   - Iterations
-  - User inputs (Scanner)
-  - Wrapper classes
+  - User inputs (Scanner) 
+  - Wrapper classes (Integer)
+  - Strings
 
 ### Cool Features
  - AI 
