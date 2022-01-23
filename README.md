@@ -26,6 +26,7 @@ This project is a clone of [2048](https://play2048.co/) run on the terminal. Our
 #### Cool Features
  - AI - The current AI can reach 1028 and even 2048 at times, making it decently competitive against the average user. 
  - A **variety** of other games to choose from
+ - The game detects and greets the current logged in user 
 
 #### Gamemodes
 - **Classic**: Nothing special. Just the vanilla version
@@ -34,8 +35,8 @@ This project is a clone of [2048](https://play2048.co/) run on the terminal. Our
 - **VSComputer**: Try to survive longer than an AI player. Try your luck with insane mode
 
 ## How-To-Launch
-1. Either download the ZIP file for this repository or clone it 
-2. In a terminal, enter the following commands
+1. Run `git clone https://github.com/dchen278/dot_gitignore.git` in a directory of your choice
+2. In a terminal, enter the following commands (Use a terminal that supports ANSI for the best experience)
 ```
 cd /path/to/dot_gitignore
 javac Woo.java
