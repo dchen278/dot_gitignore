@@ -13,14 +13,16 @@ This project is a clone of [2048](https://play2048.co/) run on the terminal. Our
   - 2D arrays
   - Iteration
   - User inputs (Scanner)
-  - currentTimeMillis()
 
+### Cool Features
+ - AI 
+   - The current AI can reach 1028 and even 2048 at times, making it decently competitive against the average user. 
 
 #### Gamemodes
-- **Classic**: Nothing special. Just the base game
+- **Classic**: Nothing special. Just the vanilla version
 - **Custom Board**: 2048 with a customizable board size.
 - **Restrict**: 2048 but you can only use 2 directions.
-- **VSComputer**: Try to survive longer than an AI player. 
+- **VSComputer**: Try to survive longer than an AI player. Try your luck with insane mode
 
 ### How-To-Launch
 1. Either download the ZIP file for this repository or clone it 
@@ -31,9 +33,5 @@ javac Woo.java
 java Woo
 ```
 3. Follow instructions displayed on terminal
-
-### Cool Features
- - AI 
-   - The current AI can reach 1028 and even 2048 at times, making it decently competitive against the average user. 
 
 ![Tux, the Linux mascot](/flag.jpg)
