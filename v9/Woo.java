@@ -9,7 +9,7 @@ public class Woo {
     public static int gameMode;
 
     public static void main(String[] args) {
-        System.out.print("\033[2J" + "\033[?25l");
+        clearScreen();
         System.out.println("Loading Game ...");
         for (int i = 0; i <= 22; i++) {
             wait(100);
@@ -45,7 +45,6 @@ public class Woo {
             System.out.println("\u001B[92m" + "Woah you are using " + os + "! \u001B[0m \n");
         }
 
-        System.out.print("\033[?25h");
         Scanner input = new Scanner(System.in);
         System.out.println("Please enter the game mode you want to play: ");
         System.out.println("1. " + Classic.about());
@@ -156,6 +155,11 @@ public class Woo {
         System.out.println("\u001B[92m" + "Let's play! \u001B[0m \n");
         poggers.run();
         input.close();
+    }
+
+    public static void clearScreen() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
     }
 
     public static String progressBar(int value) {
