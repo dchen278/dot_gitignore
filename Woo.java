@@ -156,7 +156,7 @@ public class Woo {
 
         System.out.println("\u001B[92m" + "Let's play! \u001B[0m \n");
         poggers.run();
-
+        input.close();
     }
 
     public static String progressBar(int value) {
