@@ -35,7 +35,7 @@ public class Woo {
         typingAnimation("Created By David Chen, Yat Long Chan, and Jaylen Zeng \n");
 
         wait(1500);
-        clearScreen();
+        // clearScreen();
         username = System.getProperty("user.name");
         typingAnimation("Hello " + "\u001B[92m" + username + "! \u001B[0m \n");
 
