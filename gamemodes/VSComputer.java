@@ -21,7 +21,7 @@ public class VSComputer extends Classic {
         super();
         this.interactive = interactive;
         if (difficulty == 1) {
-             bot = new EasyComputer();
+            bot = new EasyComputer();
         } else if (difficulty == 2) {
             bot = new Computer();
         } else {
@@ -37,20 +37,22 @@ public class VSComputer extends Classic {
             if (interactive) {
                 this.playTurn();
             } else {
-                wait(500);
+                wait(250);
             }
         }
         clearScreen();
         System.out.println("Bot Grid:");
         bot.printArr(bot.getGrid());
         System.out.println("====================================");
-        System.out.println("Your Grid:");
-        this.printArr(this.grid);
-        if (bot.isLoss()) {
-            System.out.println("GG! You won against the computer!");
-        } else {
-            System.out.println("Not POG! You lost!");
-        } 
+        if (interactive) {
+            System.out.println("Your Grid:");
+            this.printArr(this.grid);
+            if (bot.isLoss()) {
+                System.out.println("GG! You won against the computer!");
+            } else {
+                System.out.println("Not POG! You lost!");
+            }
+        }
     }
 
     public static void wait(int millis) {
@@ -60,7 +62,6 @@ public class VSComputer extends Classic {
             e.printStackTrace();
         }
     }
-
 
     protected void playTurn() {
         String move;
