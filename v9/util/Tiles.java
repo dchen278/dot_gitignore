@@ -19,7 +19,7 @@ public class Tiles {
         if (maxLength < 3) {
             maxLength = 3;
         }
-        String tile = String.format(tileColor(value) + "\u001B[30m" + " %-" + maxLength + "s" + RESET + "|", (value == 0) ? " " : value);
+        String tile = String.format(tileColor(value) + "\u001b[38;5;245m" + " %-" + maxLength + "s" + RESET + "|", (value == 0) ? " " : value);
         System.out.print(tile);
         }
 

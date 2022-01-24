@@ -35,6 +35,7 @@ public class Woo {
         typingAnimation("Created By David Chen, Yat Long Chan, and Jaylen Zeng \n");
 
         wait(1500);
+        clearScreen();
         username = System.getProperty("user.name");
         typingAnimation("Hello " + "\u001B[92m" + username + "! \u001B[0m \n");
 
@@ -147,7 +148,7 @@ public class Woo {
             }
 
             System.out.println("\n \u001B[91m" + "Haha JK \u001B[0m \n");
-            System.out.println("\u001B[91m" + "Time for a relaxing game of 2048 Mania \u001B[0m \n");
+            System.out.println("\u001B[91m" + "Time for a relaxing game of Clasic 2048 \u001B[0m \n");
             poggers = new Classic();
         } else {
             System.out.println("\u001B[91m" + "Bye! Hope you come back soon \u001B[0m \n");
