@@ -19,7 +19,7 @@ public class AIUtils {
 
     public static double averageTotalRuns(int[][] grid, int direction) {
         int totalScore = 0;
-        int iterations = 1000;
+        int iterations = 200;
 
         for (int i = 0; i < iterations; i++) {
             int scores = oneRun(grid, direction);
@@ -40,9 +40,10 @@ public class AIUtils {
         while(!isLoss(copy)) {
             int potentialScore = move(copy, (int) Math.random() * 4);
             score += potentialScore;
-            if (potentialScore == 0) {
-                return score;
-            }
+            // did not move
+            // if (potentialScore == 0) {
+            //     return score;
+            // }
             spawnTile(copy);
         }
 
